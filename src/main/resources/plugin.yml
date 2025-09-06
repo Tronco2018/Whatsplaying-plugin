@@ -1,0 +1,10 @@
+name: whatsplayingserver
+version: '1.0-SNAPSHOT'
+main: com.tronco.whatsplayingserver.Whatsplayingserver
+api-version: '1.20'
+commands:
+  whatsplaying:
+    usage: "/whatsplaying"
+    permissions: whatsplaying.command
+    permission-message: "You dont have access to this command"
+    description: "Use this command to see what's playing on the server machine"
