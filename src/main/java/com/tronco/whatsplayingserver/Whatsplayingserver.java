@@ -7,7 +7,11 @@ public final class Whatsplayingserver extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getCommand("whatsplaying").setExecutor(new Whatsplayingcommand());
+        try {
+            getCommand("whatsplaying").setExecutor(new Whatsplayingcommand());
+        } catch (NullPointerException e){
+            getLogger().severe("Can't find that command");
+        }
     }
 
     @Override
