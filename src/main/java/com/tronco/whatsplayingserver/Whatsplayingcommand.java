@@ -26,6 +26,7 @@ public class Whatsplayingcommand implements CommandExecutor {
     }
     private String execCommand(String command){
         try{
+            //Setting up the process
             ProcessBuilder pb = new ProcessBuilder("bash", "-c", command);
             pb.redirectErrorStream(true);
             Process process = pb.start();
@@ -35,7 +36,7 @@ public class Whatsplayingcommand implements CommandExecutor {
             );
             StringBuilder output = new StringBuilder();
             String line;
-            while ((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null){ //Reading every line of output from the command
                 output.append(line).append("\n");
             }
             process.waitFor();
